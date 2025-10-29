@@ -1,131 +1,103 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vzdělávací akce Václava Maněny</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      color: #333;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1em;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    tr:nth-child(even) {
-      background-color: #fff;
-    }
-    tr:nth-child(odd) {
-      background-color: #f7f7f7;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Přehled akcí – Václav Maněna</title>
+    <style>
+        body {font-family: Arial, sans-serif; margin: 20px;}
+        table {border-collapse: collapse; width: 100%;}
+        th, td {border: 1px solid #999; padding: 8px; text-align: left;}
+        th {background-color: #f2f2f2;}
+        caption {font-size: 1.2em; margin-bottom: 10px; font-weight: bold;}
+    </style>
 </head>
 <body>
-  <h1>Přehled nadcházejících vzdělávacích akcí lektora Václava Maněny</h1>
-  <table>
+<h1>Přehled nadcházejících vzdělávacích akcí Václava Maněny</h1>
+<table>
     <thead>
-      <tr>
-        <th>Název akce</th>
-        <th>Datum/termín</th>
-        <th>Čas (délka)</th>
-        <th>Místo/forma</th>
-        <th>Počet hodin</th>
-        <th>Pořadatel</th>
-        <th>Poznámka</th>
-      </tr>
+        <tr>
+            <th>Název akce</th>
+            <th>Datum/termín</th>
+            <th>Čas&nbsp;(délka)</th>
+            <th>Místo/forma</th>
+            <th>Počet hodin</th>
+            <th>Pořadatel</th>
+            <th>Poznámka</th>
+        </tr>
     </thead>
     <tbody>
-      <!-- Technologické centrum Hradec Králové -->
-      <tr>
-        <td>Odborný kurz: Canva &amp; ChatGPT</td>
-        <td>10., 13., 18. a 20. 11. 2025</td>
-        <td>14:00 – 18:00 (4 × 4 h)</td>
-        <td>prezenční, Piletická 486, Věkoše, Hradec Králové</td>
-        <td>16</td>
-        <td><a href="https://www.tchk.cz">Technologické centrum Hradec Králové</a></td>
-        <td>čtyřdenní kurz; účastníci se učí pracovat s Canvou a ChatGPT</td>
-      </tr>
-      <tr>
-        <td>Zimní škola umělé inteligence</td>
-        <td>22.–23. 11. 2025 &amp; 29.–30. 11. 2025</td>
-        <td>09:00 – 13:00 (4 × 4 h)</td>
-        <td>prezenční, Technologické centrum Hradec Králové</td>
-        <td>16</td>
-        <td><a href="https://www.tchk.cz">Technologické centrum Hradec Králové</a></td>
-        <td>víkendový kurz; Václav Maněna vede první a třetí den</td>
-      </tr>
-      <!-- KCV Plzeň -->
-      <tr>
-        <td>Umělá inteligence a technologie ve vzdělávání žáků se speciálními vzdělávacími potřebami</td>
-        <td>4. 11. 2025</td>
-        <td>09:00 – 14:00</td>
-        <td>KCV Plzeň, sady 5. května 42 (prezenční)</td>
-        <td>6</td>
-        <td><a href="https://www.kcv.cz">KCV</a></td>
-        <td>seminář představuje využití AI a technologií při tvorbě a úprře materiálů</td>
-      </tr>
-      <tr>
-        <td>Umělá inteligence v MŠ a na 1. stupni ZŠ</td>
-        <td>5. 11. 2025</td>
-        <td>09:00 – 12:30</td>
-        <td>KCV Plzeň, sady 5. května 42 (prezenční/on‑line)</td>
-        <td>4</td>
-        <td><a href="https://www.kcv.cz">KCV</a></td>
-        <td>kurz pro pedagogy MŠ a 1. stupně ZŠ; kapacita omezená</td>
-      </tr>
-      <tr>
-        <td>Studium k výkonu specializovaných činností – koordinace v oblasti ICT (kombinované studium)</td>
-        <td>září 2025 – červen 2026</td>
-        <td>kombinovaná forma (pátky prezenčně + on‑line)</td>
-        <td>KCV Plzeň, sady 5. května 42</td>
-        <td>250</td>
-        <td><a href="https://www.kcv.cz">KCV</a></td>
-        <td>roční program pro pedagogy; Václav Maněna je jedním z lektorů</td>
-      </tr>
-      <!-- Academy Education -->
-      <tr>
-        <td>Canva pro ZŠ</td>
-        <td>24. 11. 2025</td>
-        <td>13:00 – 16:30</td>
-        <td>on‑line</td>
-        <td>4</td>
-        <td><a href="https://academyeducation.cz">Academy Education</a></td>
-        <td>webinář zaměřený na novou verzi Canvy s AI funkcemi; záznam k dispozici</td>
-      </tr>
-      <tr>
-        <td>Canva pro vychovatelky školních družin</td>
-        <td>20. 4. 2026</td>
-        <td>08:30 – 12:00</td>
-        <td>on‑line</td>
-        <td>4</td>
-        <td><a href="https://academyeducation.cz">Academy Education</a></td>
-        <td>webinář pro vychovatelky školních družin zaměřený na využití Canvy</td>
-      </tr>
-      <tr>
-        <td>AI a digitální nástroje pro vychovatelky školních družin</td>
-        <td>18. 2. 2026 &amp; 25. 3. 2026</td>
-        <td>08:30 – 12:00 (dvoudílný webinář)</td>
-        <td>on‑line</td>
-        <td>8</td>
-        <td><a href="https://academyeducation.cz">Academy Education</a></td>
-        <td>dvoudílný webinář; Václav Maněna vede spolu s Martinem Kalibou</td>
-      </tr>
+        <!-- KCV – Umělá inteligence v MŠ a na 1. stupni ZŠ (pro učitele MŠ a ZŠ) -->
+        <tr>
+            <td>Umělá inteligence v MŠ a na 1.&nbsp;stupni ZŠ – pro učitele MŠ a ZŠ</td>
+            <td>5.&nbsp;11.&nbsp;2025</td>
+            <td>09:00–12:30 (prezenčně)</td>
+            <td>KCV Plzeň, sady 5.&nbsp;května 42</td>
+            <td>4</td>
+            <td><a href="https://www.kcv.cz/" target="_blank">KCV DVPP</a></td>
+            <td>Termín pro učitele MŠ/ZŠ【299519763818803†L175-L187】.</td>
+        </tr>
+        <!-- KCV – Umělá inteligence v MŠ a na 1. stupni ZŠ (pro vychovatele ŠD a ZŠ) -->
+        <tr>
+            <td>Umělá inteligence v MŠ a na 1.&nbsp;stupni ZŠ – pro vychovatele ŠD a učitele ZŠ</td>
+            <td>5.&nbsp;11.&nbsp;2025</td>
+            <td>09:00–13:00 (prezenčně)</td>
+            <td>KCV Plzeň, sady 5.&nbsp;května 42</td>
+            <td>4</td>
+            <td><a href="https://www.kcv.cz/" target="_blank">KCV DVPP</a></td>
+            <td>Termín pro vychovatele školní družiny a učitele 1. stupně【381106556691885†L175-L187】.</td>
+        </tr>
+        <!-- Technologické centrum HK – Zimní škola umělé inteligence Den 1 -->
+        <tr>
+            <td>Zimní škola umělé inteligence – Den 1: Chatboti a vlastní AI asistenti</td>
+            <td>22.&nbsp;11.&nbsp;2025</td>
+            <td>09:00–13:00 (prezenčně)</td>
+            <td>Technologické centrum Hradec Králové, Piletická 486/19</td>
+            <td>4</td>
+            <td><a href="https://www.tchk.cz/" target="_blank">Technologické centrum Hradec Králové</a></td>
+            <td>Součást Zimní školy AI; Václav Maněna vede den zaměřený na chatboty【812435733981511†L80-L87】【812435733981511†L161-L165】.</td>
+        </tr>
+        <!-- Technologické centrum HK – Zimní škola umělé inteligence Den 3 -->
+        <tr>
+            <td>Zimní škola umělé inteligence – Den 3: AI v grafice (Canva, Midjourney, DALL·E)</td>
+            <td>29.&nbsp;11.&nbsp;2025</td>
+            <td>09:00–13:00 (prezenčně)</td>
+            <td>Technologické centrum Hradec Králové, Piletická 486/19</td>
+            <td>4</td>
+            <td><a href="https://www.tchk.cz/" target="_blank">Technologické centrum Hradec Králové</a></td>
+            <td>Součást Zimní školy AI; Václav Maněna vede den zaměřený na AI v grafice【812435733981511†L80-L87】【812435733981511†L178-L183】.</td>
+        </tr>
+        <!-- Academy Education – Canva pro ZŠ -->
+        <tr>
+            <td>Canva pro ZŠ</td>
+            <td>24.&nbsp;11.&nbsp;2025</td>
+            <td>13:00–16:30 (on‑line)</td>
+            <td>webinář (Zoom)</td>
+            <td>4</td>
+            <td><a href="https://academyeducation.cz/" target="_blank">Academy Education</a></td>
+            <td>Webinář s AI funkcemi v Canvě pro učitele základních škol【934304003977161†L67-L75】.</td>
+        </tr>
+        <!-- Academy Education – AI a digitální nástroje pro vychovatelky ŠD -->
+        <tr>
+            <td>AI a digitální nástroje pro vychovatelky školních družin</td>
+            <td>18.&nbsp;02.&nbsp;2026</td>
+            <td>08:30–12:00 (on‑line)</td>
+            <td>webinář</td>
+            <td>8</td>
+            <td><a href="https://academyeducation.cz/" target="_blank">Academy Education</a></td>
+            <td>Václav Maněna spolulektorem s Mgr. Martinem Kalibou【257095120597058†L988-L1002】.</td>
+        </tr>
+        <!-- Academy Education – Canva pro vychovatelky školních družin -->
+        <tr>
+            <td>Canva pro vychovatelky školních družin</td>
+            <td>20.&nbsp;04.&nbsp;2026</td>
+            <td>08:30–12:00 (on‑line)</td>
+            <td>webinář</td>
+            <td>4</td>
+            <td><a href="https://academyeducation.cz/" target="_blank">Academy Education</a></td>
+            <td>Webinář pro vychovatelky školních družin【257095120597058†L1499-L1513】.</td>
+        </tr>
     </tbody>
-  </table>
+</table>
+<p><em>Tento přehled je pouze orientační a nemusí být aktuální. Generuje ho automaticky umělá inteligence z dostupných informací na internetových stránkách vzdělávacích institucí, se kterými nejvíce spolupracuji.</em></p>
 </body>
 </html>
