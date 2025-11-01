@@ -2,13 +2,18 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
+  <!-- Ensure proper scaling on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nadcházející vzdělávací akce s lektorem Václavem Maněnou</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.5;
-      margin: 20px;
       color: #333;
+      /* Center content and constrain its width for better readability */
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
     }
     h1 {
       font-size: 1.6em;
@@ -25,6 +30,19 @@
     }
     a {
       color: #1a0dab;
+    }
+
+    /* Responsive typography adjustments for small screens */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.4em;
+      }
+      h2 {
+        font-size: 1.1em;
+      }
+      body {
+        margin: 15px;
+      }
     }
   </style>
 </head>
