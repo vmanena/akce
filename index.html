@@ -16,10 +16,21 @@
   th {
     background-color: #f2f2f2;
   }
+  /*
+   * Make the table responsive by wrapping it in a container that
+   * allows horizontal scrolling on small screens. The container
+   * automatically expands to the full width available and shows a
+   * horizontal scrollbar if the table is wider than the viewport.
+   */
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+  }
 </style>
 </head>
 <body>
 <h1>Přehled nadcházejících vzdělávacích akcí s lektorem Václavem Maněnou</h1>
+<div class="table-responsive">
 <table>
 <thead>
 <tr>
@@ -82,6 +93,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>Tento přehled je pouze orientační a nemusí být úplný. Generuje ho automaticky umělá inteligence z dostupných informací na internetových stránkách vzdělávacích institucí, se kterými nejvíce spolupracuji.</p>
 </body>
 </html>
