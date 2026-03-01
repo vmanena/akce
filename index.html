@@ -1,103 +1,218 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Updated title as requested -->
-    <title>Nadcházející vzdělávací akce s lektorem Václavem Maněnou</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 1rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: auto;
-            background: #f8f9fa;
-            color: #333;
-        }
-        h1, h2 {
-            color: #1a579d;
-        }
-        .event {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .event h2 {
-            margin-top: 0;
-            font-size: 1.25rem;
-        }
-        a {
-            color: #1a579d;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        p {
-            margin: 0.25rem 0;
-        }
-        @media (max-width: 600px) {
-            body {
-                padding: 0.5rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nadcházející vzdělávací akce s Václavem Maněnou</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#eef2ff;
+      --muted:#c7cff7;
+      --line:rgba(255,255,255,.14);
+      --accent:#8bd3ff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #070a15 70%);
+      color:var(--text);
+      line-height:1.45;
+    }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 22px 16px 40px;
+    }
+    header{
+      padding: 10px 0 14px;
+    }
+    h1{
+      font-size: clamp(1.35rem, 3.2vw, 2.1rem);
+      margin: 0 0 12px;
+      letter-spacing: .2px;
+    }
+    .note{
+      font-size: 1rem;
+      color: var(--muted);
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+    .note a{
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .card{
+      background: rgba(18,26,51,.9);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+    }
+    dl{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin: 0;
+    }
+    dt{
+      font-weight: 700;
+      color: var(--muted);
+      margin: 0;
+    }
+    dd{
+      margin: 2px 0 0;
+    }
+    .row{
+      padding-top: 6px;
+      border-top: 1px dashed rgba(255,255,255,.14);
+    }
+    .row:first-child{border-top:0;padding-top:0}
+    .pair{
+      padding: 8px 0;
+    }
+    .organizer a{
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    footer{
+      margin-top: 18px;
+      color: rgba(199,207,247,.85);
+      font-size: .95rem;
+    }
+    @media (min-width: 720px){
+      dl{
+        grid-template-columns: 210px 1fr;
+        column-gap: 16px;
+        row-gap: 10px;
+        align-items: baseline;
+      }
+      dt{text-align:left}
+      dd{margin:0}
+    }
+  </style>
 </head>
 <body>
-    <h1>Nadcházející vzdělávací akce s Václavem Maněnou</h1>
-    <p>Tento přehled je pouze orientační a nemusí být úplný. Generuje ho automaticky umělá inteligence z dostupných informací na internetových stránkách vzdělávacích institucí, se kterými nejvíce spolupracuji. Jestli chcete vědět, kde v&nbsp;nejbližší době školím nebo kde bychom se mohli setkat, podívejte se na stránky: <a href="https://academyeducation.cz/pro_skoly/">ACADEMY&nbsp;EDUCATION</a>, <a href="https://www.tchk.cz/vzdelavaci-akce">Technologické&nbsp;Centrum&nbsp;Hradec&nbsp;Králové</a> a <a href="https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/">Krajské&nbsp;centrum&nbsp;vzdělávání&nbsp;Plzeň</a>.</p>
+  <div class="wrap">
+    <header>
+      <h1>Nadcházející vzdělávací akce s Václavem&nbsp;Maněnou</h1>
+      <div class="note">
+        Tento přehled je pouze orientační a nemusí být úplný. Generuje ho automaticky umělá inteligence z dostupných informací na internetových stránkách vzdělávacích institucí, se kterými nejvíce spolupracuji. Jestli chcete vědět, kde v nejbližší době školím nebo kde bychom se mohli setkat, podívejte se na stránky:
+        <a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a> (<span aria-hidden="true">https://academyeducation.cz/pro_skoly/</span>),
+        <a href="https://www.tchk.cz/vzdelavaci-akce">Technologické Centrum Hradec Králové</a> (<span aria-hidden="true">https://www.tchk.cz/vzdelavaci-akce</span>) a
+        <a href="https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/">Krajské centrum vzdělávání Plzeň</a> (<span aria-hidden="true">https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/</span>).
+      </div>
+    </header>
 
-    <div class="event">
-        <h2>Umělá inteligence a&nbsp;technologie ve&nbsp;vzdělávání žáků se&nbsp;speciálními vzdělávacími potřebami</h2>
-        <p><strong>Datum/termín:</strong> 4.&nbsp;11.&nbsp;2025</p>
-        <p><strong>Čas (délka):</strong> 9:00–14:00 (6&nbsp;vyučovacích hodin)</p>
-        <p><strong>Místo/forma:</strong> Plzeň, prezenční</p>
-        <p><strong>Pořadatel:</strong> <a href="https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/">Krajské centrum vzdělávání Plzeň</a></p>
-    </div>
+    <main class="grid" aria-label="Seznam akcí">
+      <section class="card">
+        <h2>Využití aplikací a nástrojů AI ve výuce a při tvorbě příprav</h2>
+        <dl>
+          <div class="row">
+            <dt>Datum/termín:</dt>
+            <dd>4.&nbsp;3.&nbsp;2026</dd>
+          </div>
+          <div class="row">
+            <dt>Čas (délka):</dt>
+            <dd>13:00–16:30 (4&nbsp;vyuč.&nbsp;hod.)</dd>
+          </div>
+          <div class="row">
+            <dt>Místo/forma:</dt>
+            <dd>on-line</dd>
+          </div>
+          <div class="row organizer">
+            <dt>Pořadatel:</dt>
+            <dd><a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a></dd>
+          </div>
+        </dl>
+      </section>
 
-    <div class="event">
-        <h2>Umělá inteligence v&nbsp;MŠ a&nbsp;na&nbsp;1.&nbsp;stupni ZŠ</h2>
-        <p><strong>Datum/termín:</strong> 5.&nbsp;11.&nbsp;2025</p>
-        <p><strong>Čas (délka):</strong> 9:00–13:00 (4&nbsp;vyučovací hodiny)</p>
-        <p><strong>Místo/forma:</strong> Plzeň, prezenční</p>
-        <p><strong>Pořadatel:</strong> <a href="https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/">Krajské centrum vzdělávání Plzeň</a></p>
-    </div>
+      <section class="card">
+        <h2>Online seminář: Canva pro začátečníky</h2>
+        <dl>
+          <div class="row">
+            <dt>Datum/termín:</dt>
+            <dd>18.&nbsp;3.&nbsp;2026</dd>
+          </div>
+          <div class="row">
+            <dt>Čas (délka):</dt>
+            <dd>15:00–18:00 (3&nbsp;hod.)</dd>
+          </div>
+          <div class="row">
+            <dt>Místo/forma:</dt>
+            <dd>Online přenos</dd>
+          </div>
+          <div class="row organizer">
+            <dt>Pořadatel:</dt>
+            <dd><a href="https://www.tchk.cz/vzdelavaci-akce">Technologické centrum Hradec Králové</a></dd>
+          </div>
+        </dl>
+      </section>
 
-    <div class="event">
-        <h2>Zimní škola umělé inteligence</h2>
-        <p><strong>Datum/termín:</strong> 22.–30.&nbsp;11.&nbsp;2025 (vícedenní)</p>
-        <p><strong>Čas (délka):</strong> 9:00–13:00 (živa akce, vícedenní)</p>
-        <p><strong>Místo/forma:</strong> Hradec Králové, prezenční</p>
-        <p><strong>Pořadatel:</strong> <a href="https://www.tchk.cz/vzdelavaci-akce">Technologické centrum Hradec Králové</a></p>
-    </div>
+      <section class="card">
+        <h2>Canva pro vychovatelky školních družin</h2>
+        <dl>
+          <div class="row">
+            <dt>Datum/termín:</dt>
+            <dd>20.&nbsp;4.&nbsp;2026</dd>
+          </div>
+          <div class="row">
+            <dt>Čas (délka):</dt>
+            <dd>8:30–11:30 (4&nbsp;vyuč.&nbsp;hod.)</dd>
+          </div>
+          <div class="row">
+            <dt>Místo/forma:</dt>
+            <dd>on-line</dd>
+          </div>
+          <div class="row organizer">
+            <dt>Pořadatel:</dt>
+            <dd><a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a></dd>
+          </div>
+        </dl>
+      </section>
 
-    <div class="event">
-        <h2>Canva pro&nbsp;ZŠ (webinář)</h2>
-        <p><strong>Datum/termín:</strong> 24.&nbsp;11.&nbsp;2025</p>
-        <p><strong>Čas (délka):</strong> 13:00–16:30 (4&nbsp;vyučovací hodiny)</p>
-        <p><strong>Místo/forma:</strong> on‑line</p>
-        <p><strong>Pořadatel:</strong> <a href="https://academyeducation.cz/pro_skoly/">Academy Education</a></p>
-    </div>
+      <section class="card">
+        <h2>Letní škola digitálních kompetencí 2026</h2>
+        <dl>
+          <div class="row">
+            <dt>Datum/termín:</dt>
+            <dd>17.–19.&nbsp;8.&nbsp;2026</dd>
+          </div>
+          <div class="row">
+            <dt>Čas (délka):</dt>
+            <dd>24&nbsp;vyuč.&nbsp;hod. (vícedenní)</dd>
+          </div>
+          <div class="row">
+            <dt>Místo/forma:</dt>
+            <dd>Dvůr Králové nad Labem, prezenční</dd>
+          </div>
+          <div class="row organizer">
+            <dt>Pořadatel:</dt>
+            <dd><a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a></dd>
+          </div>
+        </dl>
+      </section>
+    </main>
 
-    <div class="event">
-        <h2>AI a&nbsp;digitální nástroje pro&nbsp;vychovatelky školních družin</h2>
-        <p><strong>Datum/termín:</strong> 18.&nbsp;2.&nbsp;2026</p>
-        <p><strong>Čas (délka):</strong> 8:30–12:00 (8&nbsp;vyučovacích hodin)</p>
-        <p><strong>Místo/forma:</strong> on‑line</p>
-        <p><strong>Pořadatel:</strong> <a href="https://academyeducation.cz/pro_skoly/">Academy Education</a></p>
-    </div>
-
-    <div class="event">
-        <h2>Canva pro&nbsp;vychovatelky školních družin</h2>
-        <p><strong>Datum/termín:</strong> 20.&nbsp;4.&nbsp;2026</p>
-        <p><strong>Čas (délka):</strong> 8:30–12:00 (4&nbsp;vyučovací hodiny)</p>
-        <p><strong>Místo/forma:</strong> on‑line</p>
-        <p><strong>Pořadatel:</strong> <a href="https://academyeducation.cz/pro_skoly/">Academy Education</a></p>
-    </div>
-
+    <footer>
+      Poslední aktualizace: 1.&nbsp;3.&nbsp;2026
+    </footer>
+  </div>
 </body>
 </html>
