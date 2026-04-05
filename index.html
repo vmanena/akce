@@ -1,218 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nadcházející vzdělávací akce s Václavem Maněnou</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vzdělávací akce - Václav Maněna</title>
   <style>
     :root{
-      --bg:#0b1020;
-      --card:#121a33;
-      --text:#eef2ff;
-      --muted:#c7cff7;
-      --line:rgba(255,255,255,.14);
-      --accent:#8bd3ff;
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --text:#182230;
+      --muted:#5f6b7a;
+      --line:#d9e2ec;
+      --accent:#2563eb;
+      --accent-2:#1d4ed8;
+      --shadow:0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius:18px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, var(--bg), #070a15 70%);
+      font-family:Inter, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      line-height:1.45;
+      background:
+        radial-gradient(circle at top right, rgba(37,99,235,0.10), transparent 25%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
     }
     .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 22px 16px 40px;
+      max-width:1200px;
+      margin:0 auto;
+      padding:40px 20px 56px;
     }
-    header{
-      padding: 10px 0 14px;
+    .hero{
+      background:linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+      color:#fff;
+      border-radius:24px;
+      padding:32px 28px;
+      box-shadow:var(--shadow);
+      margin-bottom:28px;
     }
-    h1{
-      font-size: clamp(1.35rem, 3.2vw, 2.1rem);
-      margin: 0 0 12px;
-      letter-spacing: .2px;
+    .hero h1{
+      margin:0 0 10px;
+      font-size:clamp(28px, 4vw, 42px);
+      line-height:1.1;
     }
-    .note{
-      font-size: 1rem;
-      color: var(--muted);
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 14px;
+    .hero p{
+      margin:6px 0;
+      color:rgba(255,255,255,0.88);
+      font-size:15px;
     }
-    .note a{
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 2px;
+    .panel{
+      background:var(--card);
+      border:1px solid rgba(217,226,236,0.8);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
     }
-    .grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 16px;
+    .panel-head{
+      padding:22px 24px 10px;
+    }
+    .panel-head h2{
+      margin:0;
+      font-size:22px;
+    }
+    .panel-head p{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .table-wrap{
+      width:100%;
+      overflow-x:auto;
+      padding:0 16px 18px;
+    }
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      min-width:860px;
+      background:#fff;
+    }
+    thead th{
+      text-align:left;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:var(--muted);
+      background:#f8fafc;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:14px 16px;
+    }
+    thead th:first-child{border-top-left-radius:12px}
+    thead th:last-child{border-top-right-radius:12px}
+    tbody td{
+      padding:16px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:15px;
+    }
+    tbody tr:hover td{
+      background:#f9fbff;
+    }
+    .name{
+      font-weight:700;
+      color:var(--text);
+    }
+    .source{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#e8f0ff;
+      color:var(--accent-2);
+      font-weight:600;
+      font-size:13px;
+      white-space:nowrap;
+    }
+    a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+    }
+    a:hover{text-decoration:underline}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:18px;
+      padding:0 16px 18px;
     }
     .card{
-      background: rgba(18,26,51,.9);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px 14px 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      display:none;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 6px 20px rgba(15, 23, 42, 0.04);
     }
-    .card h2{
-      margin: 0 0 10px;
-      font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+    .card h3{
+      margin:0 0 14px;
+      font-size:18px;
+      line-height:1.35;
     }
-    dl{
+    .meta{
       display:grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-      margin: 0;
+      gap:10px;
+      margin-bottom:14px;
     }
-    dt{
-      font-weight: 700;
-      color: var(--muted);
-      margin: 0;
+    .meta div{
+      font-size:14px;
+      color:var(--muted);
     }
-    dd{
-      margin: 2px 0 0;
+    .meta strong{
+      color:var(--text);
+      display:block;
+      margin-bottom:3px;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
     }
-    .row{
-      padding-top: 6px;
-      border-top: 1px dashed rgba(255,255,255,.14);
+    .empty{
+      padding:28px 24px 32px;
+      color:var(--muted);
+      font-size:16px;
     }
-    .row:first-child{border-top:0;padding-top:0}
-    .pair{
-      padding: 8px 0;
+    .footer{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
     }
-    .organizer a{
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    footer{
-      margin-top: 18px;
-      color: rgba(199,207,247,.85);
-      font-size: .95rem;
-    }
-    @media (min-width: 720px){
-      dl{
-        grid-template-columns: 210px 1fr;
-        column-gap: 16px;
-        row-gap: 10px;
-        align-items: baseline;
-      }
-      dt{text-align:left}
-      dd{margin:0}
+    @media (max-width: 760px){
+      .table-wrap{display:none}
+      .card{display:block}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Nadcházející vzdělávací akce s Václavem&nbsp;Maněnou</h1>
-      <div class="note">
-        Tento přehled je pouze orientační a nemusí být úplný. Generuje ho automaticky umělá inteligence z dostupných informací na internetových stránkách vzdělávacích institucí, se kterými nejvíce spolupracuji. Jestli chcete vědět, kde v nejbližší době školím nebo kde bychom se mohli setkat, podívejte se na stránky:
-        <a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a> (<span aria-hidden="true">https://academyeducation.cz/pro_skoly/</span>),
-        <a href="https://www.tchk.cz/vzdelavaci-akce">Technologické Centrum Hradec Králové</a> (<span aria-hidden="true">https://www.tchk.cz/vzdelavaci-akce</span>) a
-        <a href="https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/">Krajské centrum vzdělávání Plzeň</a> (<span aria-hidden="true">https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/</span>).
+    <section class="hero">
+      <h1>Vzdělávací akce - Václav Maněna</h1>
+      <p>Poslední aktualizace: 5. 4. 2026</p>
+      <p>Prohledané zdroje: TECHNOLOGICKÉ CENTRUM Hradec Králové, KCV DVPP, ACADEMY EDUCATION</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Nalezené akce</h2>
+        <p>Byly zahrnuty pouze akce, kde je v dostupném obsahu výslovně uveden lektor Václav Maněna / Mgr. Václav Maněna, Ph.D.</p>
       </div>
-    </header>
 
-    <main class="grid" aria-label="Seznam akcí">
-      <section class="card">
-        <h2>Využití aplikací a nástrojů AI ve výuce a při tvorbě příprav</h2>
-        <dl>
-          <div class="row">
-            <dt>Datum/termín:</dt>
-            <dd>4.&nbsp;3.&nbsp;2026</dd>
-          </div>
-          <div class="row">
-            <dt>Čas (délka):</dt>
-            <dd>13:00–16:30 (4&nbsp;vyuč.&nbsp;hod.)</dd>
-          </div>
-          <div class="row">
-            <dt>Místo/forma:</dt>
-            <dd>on-line</dd>
-          </div>
-          <div class="row organizer">
-            <dt>Pořadatel:</dt>
-            <dd><a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a></dd>
-          </div>
-        </dl>
-      </section>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Název akce</th>
+              <th>Datum a čas</th>
+              <th>Místo konání</th>
+              <th>Detail akce</th>
+              <th>Zdroj</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="name">Canva pro vychovatelky školních družin</div></td>
+              <td>20. 4. 2026, 8:30–11:30</td>
+              <td>Neuvedeno</td>
+              <td><a href="https://academyeducation.cz/o_kurzu/?kurz=CANVYCH" target="_blank" rel="noopener noreferrer">Zobrazit detail</a></td>
+              <td><span class="source">ACADEMY EDUCATION</span></td>
+            </tr>
+            <tr>
+              <td><div class="name">AI jako asistent učitele</div></td>
+              <td>5. 5. 2026, 14:00–17:00</td>
+              <td>Neuvedeno</td>
+              <td><a href="https://academyeducation.cz/o_kurzu/?kurz=AIPROU" target="_blank" rel="noopener noreferrer">Zobrazit detail</a></td>
+              <td><span class="source">ACADEMY EDUCATION</span></td>
+            </tr>
+            <tr>
+              <td><div class="name">Mobil jako pomocník učitele</div></td>
+              <td>9. 6. 2026, 14:00–17:00</td>
+              <td>Neuvedeno</td>
+              <td><a href="https://academyeducation.cz/o_kurzu/?kurz=MOBIL" target="_blank" rel="noopener noreferrer">Zobrazit detail</a></td>
+              <td><span class="source">ACADEMY EDUCATION</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      <section class="card">
-        <h2>Online seminář: Canva pro začátečníky</h2>
-        <dl>
-          <div class="row">
-            <dt>Datum/termín:</dt>
-            <dd>18.&nbsp;3.&nbsp;2026</dd>
+      <div class="cards">
+        <article class="card">
+          <h3>Canva pro vychovatelky školních družin</h3>
+          <div class="meta">
+            <div><strong>Datum a čas</strong>20. 4. 2026, 8:30–11:30</div>
+            <div><strong>Místo konání</strong>Neuvedeno</div>
+            <div><strong>Zdroj</strong>ACADEMY EDUCATION</div>
           </div>
-          <div class="row">
-            <dt>Čas (délka):</dt>
-            <dd>15:00–18:00 (3&nbsp;hod.)</dd>
-          </div>
-          <div class="row">
-            <dt>Místo/forma:</dt>
-            <dd>Online přenos</dd>
-          </div>
-          <div class="row organizer">
-            <dt>Pořadatel:</dt>
-            <dd><a href="https://www.tchk.cz/vzdelavaci-akce">Technologické centrum Hradec Králové</a></dd>
-          </div>
-        </dl>
-      </section>
+          <a href="https://academyeducation.cz/o_kurzu/?kurz=CANVYCH" target="_blank" rel="noopener noreferrer">Zobrazit detail akce</a>
+        </article>
 
-      <section class="card">
-        <h2>Canva pro vychovatelky školních družin</h2>
-        <dl>
-          <div class="row">
-            <dt>Datum/termín:</dt>
-            <dd>20.&nbsp;4.&nbsp;2026</dd>
+        <article class="card">
+          <h3>AI jako asistent učitele</h3>
+          <div class="meta">
+            <div><strong>Datum a čas</strong>5. 5. 2026, 14:00–17:00</div>
+            <div><strong>Místo konání</strong>Neuvedeno</div>
+            <div><strong>Zdroj</strong>ACADEMY EDUCATION</div>
           </div>
-          <div class="row">
-            <dt>Čas (délka):</dt>
-            <dd>8:30–11:30 (4&nbsp;vyuč.&nbsp;hod.)</dd>
-          </div>
-          <div class="row">
-            <dt>Místo/forma:</dt>
-            <dd>on-line</dd>
-          </div>
-          <div class="row organizer">
-            <dt>Pořadatel:</dt>
-            <dd><a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a></dd>
-          </div>
-        </dl>
-      </section>
+          <a href="https://academyeducation.cz/o_kurzu/?kurz=AIPROU" target="_blank" rel="noopener noreferrer">Zobrazit detail akce</a>
+        </article>
 
-      <section class="card">
-        <h2>Letní škola digitálních kompetencí 2026</h2>
-        <dl>
-          <div class="row">
-            <dt>Datum/termín:</dt>
-            <dd>17.–19.&nbsp;8.&nbsp;2026</dd>
+        <article class="card">
+          <h3>Mobil jako pomocník učitele</h3>
+          <div class="meta">
+            <div><strong>Datum a čas</strong>9. 6. 2026, 14:00–17:00</div>
+            <div><strong>Místo konání</strong>Neuvedeno</div>
+            <div><strong>Zdroj</strong>ACADEMY EDUCATION</div>
           </div>
-          <div class="row">
-            <dt>Čas (délka):</dt>
-            <dd>24&nbsp;vyuč.&nbsp;hod. (vícedenní)</dd>
-          </div>
-          <div class="row">
-            <dt>Místo/forma:</dt>
-            <dd>Dvůr Králové nad Labem, prezenční</dd>
-          </div>
-          <div class="row organizer">
-            <dt>Pořadatel:</dt>
-            <dd><a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a></dd>
-          </div>
-        </dl>
-      </section>
-    </main>
+          <a href="https://academyeducation.cz/o_kurzu/?kurz=MOBIL" target="_blank" rel="noopener noreferrer">Zobrazit detail akce</a>
+        </article>
+      </div>
+    </section>
 
-    <footer>
-      Poslední aktualizace: 1.&nbsp;3.&nbsp;2026
-    </footer>
+    <div class="footer">
+      V dalších dvou zdrojích nebyl v poskytnutém obsahu u žádné akce výslovně uveden lektor Václav Maněna.
+    </div>
   </div>
 </body>
 </html>
