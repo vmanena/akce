@@ -1,71 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nejbližší akce s Václavem Maněnou</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Aktuální vzdělávací akce</title>
+
+  <meta
+    name="description"
+    content="Přehled aktuálních webinářů, seminářů a vzdělávacích akcí Václava Maněny."
+  >
+
+  <style>
+    :root {
+      --background: #f5f6f8;
+      --surface: #ffffff;
+      --text: #17202a;
+      --muted: #65717d;
+      --border: #e0e5ea;
+      --accent: #1769aa;
+      --accent-hover: #0f5489;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--background);
+      font-family:
+        Inter, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    .page-header {
+      padding: 70px 24px 50px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, #ffffff, transparent 42%),
+        linear-gradient(135deg, #e7f0f7, #f8fafb);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .page-header p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .event-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 255px;
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(22, 39, 55, 0.06);
+      transition:
+        transform 160ms ease,
+        box-shadow 160ms ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 38px rgba(22, 39, 55, 0.11);
+    }
+
+    .event-date {
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 750;
+    }
+
+    .event-title {
+      margin: 0 0 24px;
+      font-size: 1.35rem;
+      line-height: 1.28;
+      letter-spacing: -0.02em;
+    }
+
+    .event-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: auto;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .event-link:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    .page-footer {
+      padding: 24px;
+      color: var(--muted);
+      text-align: center;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .page-header {
+        padding: 50px 20px 38px;
+      }
+
+      main {
+        padding-top: 30px;
+      }
+
+      .event-card {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
-<body style="margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f4f7fb 0%,#eef3f9 100%);color:#1f2937;">
-  <div style="max-width:920px;margin:0 auto;padding:24px 16px 40px;">
-    <header style="background:#ffffff;border-radius:24px;padding:28px 20px;box-shadow:0 10px 30px rgba(15,23,42,0.08);border:1px solid #e5e7eb;">
-      <div style="display:inline-block;padding:6px 12px;border-radius:999px;background:#e0ecff;color:#1d4ed8;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;">Automatický přehled</div>
-      <h1 style="margin:14px 0 8px;font-size:30px;line-height:1.15;color:#0f172a;">Nejbližší akce s Václavem Maněnou</h1>
-      <p style="margin:0;font-size:14px;color:#64748b;">Poslední aktualizace: 7. 5. 2026</p>
-    </header>
 
-    <main style="margin-top:20px;">
-      <section style="display:grid;grid-template-columns:1fr;gap:16px;">
-        <article style="background:#ffffff;border:1px solid #e5e7eb;border-radius:20px;padding:18px;box-shadow:0 8px 24px rgba(15,23,42,0.06);">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;">
-            <h2 style="margin:0;font-size:20px;line-height:1.3;color:#111827;">Mobil a tablet jako pomocník učitele</h2>
-            <span style="background:#dcfce7;color:#166534;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;">Nalezeno</span>
-          </div>
+<body>
+  <header class="page-header">
+    <h1>Aktuální vzdělávací akce</h1>
 
-          <div style="margin-top:14px;display:grid;grid-template-columns:1fr;gap:10px;">
-            <div style="background:#f8fafc;border-radius:14px;padding:12px 14px;border:1px solid #e2e8f0;">
-              <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.04em;">Datum a čas</div>
-              <div style="margin-top:4px;font-size:15px;font-weight:600;color:#0f172a;">9. 6. 2026, 14:00–17:00</div>
-            </div>
+    <p>
+      Webináře, semináře a další akce, na kterých se můžeme potkat.
+    </p>
+  </header>
 
-            <div style="background:#f8fafc;border-radius:14px;padding:12px 14px;border:1px solid #e2e8f0;">
-              <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.04em;">Místo konání</div>
-              <div style="margin-top:4px;font-size:15px;font-weight:600;color:#0f172a;">Online</div>
-            </div>
-
-            <div style="background:#f8fafc;border-radius:14px;padding:12px 14px;border:1px solid #e2e8f0;">
-              <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.04em;">Pořadatel</div>
-              <div style="margin-top:4px;font-size:15px;font-weight:600;color:#0f172a;">ACADEMY EDUCATION</div>
-            </div>
-
-            <div style="background:#f8fafc;border-radius:14px;padding:12px 14px;border:1px solid #e2e8f0;">
-              <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.04em;">Odkaz na detail akce</div>
-              <div style="margin-top:6px;">
-                <a href="https://academyeducation.cz/o_kurzu/?kurz=MOBIL" style="color:#2563eb;text-decoration:none;font-weight:700;word-break:break-word;">https://academyeducation.cz/o_kurzu/?kurz=MOBIL</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section style="margin-top:22px;background:#ffffff;border:1px solid #e5e7eb;border-radius:20px;padding:18px;box-shadow:0 8px 24px rgba(15,23,42,0.05);">
-        <h3 style="margin:0 0 10px;font-size:18px;color:#0f172a;">Poznámka k vyhledání</h3>
-        <p style="margin:0;font-size:14px;line-height:1.7;color:#475569;">
-          V poskytnutých zdrojích byla akce s explicitně uvedeným lektorem Václavem Maněnou nalezena na portálu ACADEMY EDUCATION.
-          V ostatních zdrojích nebyl v dodaném obsahu jeho lektorský údaj u konkrétních akcí zřetelně uveden.
-        </p>
-      </section>
-    </main>
-
-    <footer style="margin-top:24px;background:#0f172a;color:#e2e8f0;border-radius:24px;padding:20px;box-shadow:0 10px 30px rgba(15,23,42,0.18);">
-      <p style="margin:0;font-size:13px;line-height:1.8;">
-        Tento přehled je pouze orientační a nemusí být úplný. Generuje ho automaticky umělá inteligence z dostupných informací na internetových stránkách vzdělávacích institucí, se kterými nejvíce spolupracuji. Jestli chcete vědět, kde v nejbližší době školím nebo kde bychom se mohli setkat, podívejte se na stránky:
-        <a href="https://academyeducation.cz/pro_skoly/" style="color:#93c5fd;">ACADEMY EDUCATION</a>,
-        <a href="https://www.tchk.cz/vzdelavaci-akce" style="color:#93c5fd;">Technologické Centrum Hradec Králové</a>,
-        <a href="https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/" style="color:#93c5fd;">Krajské centrum vzdělávání Plzeň</a>
-        a
-        <a href="https://www.h-edu.cz/kurzy" style="color:#93c5fd;">H-Edu</a>.
-      </p>
-    </footer>
+  <main>
+    <section class="events" aria-label="Seznam vzdělávacích akcí">
+      <article class="event-card">
+  <div class="event-date">
+   3.11.2026 8:30 - 12:00 hod.
   </div>
+
+  <h2 class="event-title">
+    AI a digitální nástroje pro vychovatelky školních družin
+  </h2>
+
+  <a
+    class="event-link"
+    href="https://academyeducation.cz/o_kurzu/?kurz=DIGVYCH"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Podrobnosti a přihlášení
+    <span aria-hidden="true">↗</span>
+  </a>
+</article><article class="event-card">
+  <div class="event-date">
+   16. 04. 2026 15:00 15:00
+  </div>
+
+  <h2 class="event-title">
+    Canva pro začátečníky - online
+  </h2>
+
+  <a
+    class="event-link"
+    href="https://www.byznystarter.cz/akce/canva-pro-zacatecniky-online/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Podrobnosti a přihlášení
+    <span aria-hidden="true">↗</span>
+  </a>
+</article>
+     </section>
+  </main>
+
+  <footer class="page-footer">
+    Přehled je pravidelně aktualizován.
+  </footer>
 </body>
 </html>
