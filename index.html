@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vzdělávací akce</title>
+  <title>Přehled vzdělávacích akcí</title>
 
   <meta
     name="description"
@@ -110,7 +110,35 @@
       color: var(--text-secondary);
       font-size: clamp(1rem, 2vw, 1.16rem);
     }
+    
+    .hero-actions {
+      margin-top:32px;
+     }
 
+    .hero-button {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:15px 26px;
+      border-radius:14px;
+      background:#3056d3;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      transition:.2s;
+      box-shadow:0 8px 24px rgba(48,86,211,.22);
+    }
+
+    .hero-button:hover {
+      background:#2445b8;
+      transform:translateY(-2px);
+    }
+
+   .intro a {
+      color:inherit;
+      font-weight:700;
+    }
+    
     main {
       width: min(100%, var(--content-width));
       margin: 0 auto;
@@ -290,14 +318,20 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <p class="eyebrow">Průběžně aktualizováno</p>
+      <p class="eyebrow">Průběžně aktualizováno umělou inteligencí</p>
 
-      <h1>Vzdělávací akce</h1>
+      <h1>Přehled vzdělávacích akcí</h1>
 
       <p class="intro">
         Přehled aktuálních kurzů, seminářů, webinářů a dalších
-        vzdělávacích akcí na jednom místě.
+        vzdělávacích akcí na jednom místě. Na <a href="https://manena.info">manena.info</a> najdete také články, výukové materiály, webináře a praktické tipy pro využití AI, informatiky a kyberbezpečnosti ve výuce.
       </p>
+      <p class="hero-actions">
+        <a class="hero-button" href="https://manena.info">
+          Objevit další tipy pro učitele
+        </a>
+      </p>
+
     </div>
   </header>
 
@@ -340,7 +374,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       Přehled sestavuje automaticky umělá inteligence z dostupných informací na internetových stránkách vzdělávacích institucí, se kterými nejvíce spolupracuji. Podrobnosti a případné změny
-      vždy ověřte na stránce pořadatele. Jestli chcete vědět, kde v nejbližší době školím nebo kde bychom se mohli setkat, podívejte se na stránky: <a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION, <a href="https://www.byznystarter.cz/kalendar/#planovane">Byznystarter</a>, <a href="https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/">Krajské centrum vzdělávání Plzeň</a> a <a href="https://www.h-edu.cz/kurzy">H-Edu</a>. 
+      vždy ověřte na stránce pořadatele. Jestli chcete vědět, kde v nejbližší době školím nebo kde bychom se mohli setkat, podívejte se na stránky: <a href="https://academyeducation.cz/pro_skoly/">ACADEMY EDUCATION</a>, <a href="https://www.byznystarter.cz/kalendar/#planovane">Byznystarter</a>, <a href="https://www.kcv.cz/dvpp/katalog-vzdelavacich-programu/">Krajské centrum vzdělávání Plzeň</a> a <a href="https://www.h-edu.cz/kurzy">H-Edu</a>. 
     </div>
   </footer>
 </body>
